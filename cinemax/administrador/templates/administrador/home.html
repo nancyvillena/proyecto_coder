@@ -1,0 +1,26 @@
+<!--Inicio- Aquí tenemos la herencia del template base -------------------------------------------------> 
+{% extends "administrador/base.html" %}
+<!--Fin- Aquí tenemos la herencia del template base ----------------------------------------------------> 
+<!--Carga de los estilos, entre otros archivos estaticos ----------------------------------------------->
+{% load static %}
+<!--Inicio- de parte dinamica -------------------------------------------------------------------------->
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) 
+
+    <h1 style="background-color:blue">{{mensaje}}</h1>
+    <br>
+
+    -->
+
+    <div style="color: rgb(33, 39, 214); text-align: center;"> 
+        pagina de inicio 
+    </div>
+
+
+    
+
+
+
+{% endblock %}

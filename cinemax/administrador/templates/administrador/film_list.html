@@ -1,0 +1,55 @@
+<!--Inicio- Aquí tenemos la herencia del template base -------------------------------------------------> 
+{% extends "administrador/base.html" %}
+<!--Fin- Aquí tenemos la herencia del template base ----------------------------------------------------> 
+<!--Carga de los estilos, entre otros archivos estaticos ----------------------------------------------->
+{% load static %}
+
+<!--Inicio- de parte dinamica -------------------------------------------------------------------------->
+{% block contenidoQueCambia %}
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <h3>Peliculas</h3>
+        </div>
+    </div>        
+    <div class="album py-5 bg-light">
+        <div class="container">
+    
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for film in object_list %}
+            <div class="col">
+              <div class="card shadow-sm">
+                <a href="{% url 'administrador:pelicula' film.id %}"" class="thumbnail" >
+                          <image src="{{ film.poster.url }}" class="img-fluid img-thumbnail">
+                </a>              
+    
+                <div class="card-body">
+                  <h4>{{ film.name }}</h4>  
+                  <h4>{{ film.duration|date:"c" }}</h4> 
+                  <p class="card-text">
+                        {{film.sinopsis }}
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="{% url 'administrador:pelicula' film.id %}" >
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      </a>  
+                      <a href="{% url 'administrador:update' film.id %}" >
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+                      </a>                     
+                      <a href="{% url 'administrador:borrar'  film.id %}" >
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Eliminar</button>
+                      </a>
+                    </div>
+                    <small class="text-muted">{{film.duration }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% empty %}
+                    <h1>No film yet.</h1>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+{% endblock %}

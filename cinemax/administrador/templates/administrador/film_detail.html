@@ -1,0 +1,33 @@
+{% extends "administrador/base.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<main role="main">
+ <div class="album py-5 bg-light">
+        <div class="container">
+            <h3>{{film.name}}</h3>
+        </div>
+ </div>      
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <h2 class="section-heading mb-4"></h2>
+        <div>
+          {{film}}
+          <div class="modal-body">
+            <pre>
+                <code>&lt;p&gt;{{film.name}}...&lt;/p&gt;
+                &lt;p&gt;And another line of sample text here...&lt;/p&gt;
+                </code>
+            </pre>
+
+            <p> {{film.sinopsis
+                }}
+            </p>
+          </div>
+          <image src="{{ film.poster.url }}">
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

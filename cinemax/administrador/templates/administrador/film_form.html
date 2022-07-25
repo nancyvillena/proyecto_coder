@@ -1,0 +1,29 @@
+{% extends "administrador/base.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<main role="main">
+ <div class="album py-5 bg-light">
+        <div class="container">
+            <h3>Crear Pelicula</h3>
+        </div>
+ </div>  
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <div>
+            <form  method="post" enctype="multipart/form-data" >{% csrf_token %}
+                <table>
+
+                    
+                    {{ form.as_table }}
+                </table>
+                <br>
+                <input type="submit" value="Crear Pelicula" />
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

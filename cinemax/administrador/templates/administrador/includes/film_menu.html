@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'administrador:home' %}">CINEMAX</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'administrador:home' %}">Inicio</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'administrador:VerPeliculas' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Peliculas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'administrador:create' %}">Crear Peliculas</a></li>
+              <li><a class="dropdown-item" href="{% url 'administrador:VerPeliculas' %}">Ver Peliculas</a></li>             
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'administrador:VerPeliculas' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Funciones
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'administrador:create' %}">Crear Funciones</a></li>
+              <li><a class="dropdown-item" href="{% url 'administrador:VerPeliculas' %}">Ver Funciones</a></li>
+              <li><a class="dropdown-item" href="#">Editar Funciones</a></li>             
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'administrador:VerPeliculas' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Clientes
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'administrador:create' %}">Agregar Nuevo Cliente</a></li>
+              <li><a class="dropdown-item" href="{% url 'administrador:VerPeliculas' %}">Ver Clientes</a></li>
+              <li><a class="dropdown-item" href="#">Editar Clientes</a></li>              
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>                     
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form action="/administrador/buscar" class="d-flex" role="search">
+          <input name="q"  class="form-control me-2" type="search" placeholder="Buscar Pelicula" aria-label="Search">
+          <a href="{% url 'administrador:buscar'  %}" >
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </a>
+        </form>
+      </div>
+    </div>
+  </nav>
