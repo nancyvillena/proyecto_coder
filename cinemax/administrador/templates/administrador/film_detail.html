@@ -12,22 +12,22 @@
       <div class="col-md-9 mx-auto">
         <h2 class="section-heading mb-4"></h2>
         <div>
-          {{film}}
           <div class="modal-body">
+            <image src="{{ film.poster.url }}">            
             <pre>
-                <code>&lt;p&gt;{{film.name}}...&lt;/p&gt;
-                &lt;p&gt;And another line of sample text here...&lt;/p&gt;
-                </code>
+                <h1>{{film.name}}</h1>
             </pre>
-
-            <p> {{film.sinopsis
-                }}
+                <h6>Duración:</h6>
+                {{film.duration}}<br> 
+            <p> {{film.sinopsis}}
             </p>
           </div>
-          <image src="{{ film.poster.url }}">
         </div>
       </div>
     </div>
   </div>
 </main>
+
 {% endblock %}
+
+
